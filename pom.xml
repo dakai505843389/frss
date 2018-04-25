@@ -192,6 +192,25 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.4.0</version>
         </dependency>
+        <!-- 生成高质量缩略图的第三方库 -->
+        <dependency>
+            <groupId>net.coobird</groupId>
+            <artifactId>thumbnailator</artifactId>
+            <version>0.4.8</version>
+        </dependency>
+        <!-- httpcomponents组件-->
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <!--<dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.5</version>
+        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
+        <!--<dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>-->
     </dependencies>
     <build>
         <finalName>frss</finalName>

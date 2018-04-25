@@ -80,8 +80,9 @@
         </property>
     </bean>
 
+    <!-- 配置mybatis实现 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.com.hd.clc.frss.db.impl" />
+        <property name="basePackage" value="com.hd.clc.frss.db.impl" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 

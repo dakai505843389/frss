@@ -2,5 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hd.clc.frss.db.impl.SignMapper">
 
+    <sql id="Base_Column">
+        id, studentId, studentNumber, studentName, courseId, signTime, status
+    </sql>
+
+    <insert id="sign" parameterType="com.hd.clc.frss.db.entity.Sign" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO Sign
+        (studentId, studentNumber, studentName, courseId, signTime, status)
+        VALUES (#{studentId}, #{studentNumber}, #{studentName}, #{courseId}, #{signTime}, #{status})
+    </insert>
+
+    <select id="queryByCourseId" resultType="com.hd.clc.frss.db.entity.Sign">
+        SELECT <include refid="Base_Column"/>
+        FROM Sign
+        WHERE courseId = #{courseId}
+    </select>
 
 </mapper>

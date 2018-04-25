@@ -10,4 +10,5 @@ public class Student {
     private int number;
     private String name;
     private String imagePath;
+    private String face_token;
 }

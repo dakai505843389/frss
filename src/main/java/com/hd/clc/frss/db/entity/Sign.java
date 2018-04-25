@@ -10,6 +10,9 @@ import java.util.Date;
 public class Sign {
     private int id;
     private int studentId;
+    private int studentNumber;
+    private String studentName;
     private int courseId;
     private Date signTime;
+    private int status;
 }

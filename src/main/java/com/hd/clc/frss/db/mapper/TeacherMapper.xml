@@ -2,5 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hd.clc.frss.db.impl.TeacherMapper">
 
+    <sql id="Base_Column">
+        id, account, password, name
+    </sql>
+
+    <insert id="add" parameterType="com.hd.clc.frss.db.entity.Teacher" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO Teacher
+        (account, password, name)
+        VALUES (#{account}, #{password}, #{name})
+    </insert>
+
+    <select id="queryById" resultType="com.hd.clc.frss.db.entity.Teacher">
+        SELECT <include refid="Base_Column"/>
+        FROM Teacher
+        WHERE id = #{id}
+    </select>
+
 
 </mapper>

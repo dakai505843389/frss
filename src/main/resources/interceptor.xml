@@ -18,8 +18,8 @@
     <!-- 配置拦截器 -->
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <mvc:exclude-mapping path="/back/systemManager/loginVerify"/>
+            <mvc:mapping path="/back/**"/>
+            <!--<mvc:exclude-mapping path="/back/systemManager/loginVerify"/>-->
             <bean class="com.hd.clc.frss.interceptor.UserInterceptor">
                 <!--<property name="systemSessionServer">
                     <ref bean="systemSessionServer"></ref>

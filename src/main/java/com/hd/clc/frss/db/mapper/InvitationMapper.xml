@@ -2,5 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hd.clc.frss.db.impl.InvitationMapper">
 
+    <sql id="Base_Column">
+        id, code, inviterId, belongTeacherId, status
+    </sql>
+
+    <insert id="add" parameterType="com.hd.clc.frss.db.entity.Invitation" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO Invitation
+        (code, inviterId)
+        VALUES (#{code}, #{inviterId})
+    </insert>
+
+    <select id="queryByCode" resultType="com.hd.clc.frss.db.entity.Invitation">
+        SELECT <include refid="Base_Column"/>
+        FROM Invitation
+        WHERE code = #{code}
+    </select>
+
+    <update id="update" parameterType="com.hd.clc.frss.db.entity.Invitation">
+        UPDATE Invitation
+        SET code = #{code}, inviterId = #{inviterId}, belongTeacherId = #{belongTeacherId}, status = #{status}
+        WHERE id = #{id}
+    </update>
 
 </mapper>

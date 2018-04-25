@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hd.clc.frss.db.impl.FaceSetMapper">
+
+    <sql id="Base_Column">
+        id, description, faceset_token, face_count, addTime, updateTime
+    </sql>
+
+    <insert id="add" parameterType="com.hd.clc.frss.db.entity.FaceSet" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO Face_Set
+        (description, faceset_token, face_count, addTime)
+        VALUES (#{description}, #{faceset_token}, #{face_count}, #{addTime})
+    </insert>
+
+    <select id="queryById" resultType="com.hd.clc.frss.db.entity.FaceSet">
+        select <include refid="Base_Column"/>
+        FROM Face_Set
+        WHERE id = #{id}
+    </select>
+
+    <update id="update" parameterType="com.hd.clc.frss.db.entity.FaceSet">
+        UPDATE Face_Set
+        SET description = #{description}, face_count = #{face_count}, updateTime = #{updateTime}
+        WHERE id = #{id}
+    </update>
+
+</mapper>

@@ -2,5 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hd.clc.frss.db.impl.StudentMapper">
 
+    <sql id="Base_Column">
+        id, number, name, imagePath, face_token
+    </sql>
+
+    <insert id="add" parameterType="com.hd.clc.frss.db.entity.Student" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO Student
+        (number, name, imagePath, face_token)
+        VALUES (#{number}, #{name}, #{imagePath}, #{face_token})
+    </insert>
+
+    <select id="queryByNumber" resultType="com.hd.clc.frss.db.entity.Student">
+        SELECT <include refid="Base_Column"/>
+        FROM Student
+        WHERE number = #{number}
+    </select>
+
+    <select id="queryByFace_Token" resultType="com.hd.clc.frss.db.entity.Student">
+        SELECT <include refid="Base_Column"/>
+        FROM Student
+        WHERE face_token = #{face_token}
+    </select>
 
 </mapper>
